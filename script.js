@@ -25,14 +25,14 @@ class Weather {
 }
 
 class DayWeather extends Weather {
-  constructor(temperature, precipitation, description) {
+  constructor(temperature, precipitation, description, weekday, info) {
     super(temperature, precipitation, description);
-    this.alert = weatherAlert;
     this.day = weekday;
+    this.info = info;
   }
   displayInfo() {
     console.log(
-      `Weather: ${this.temp}, ${this.precip}, ${this.desc}, ${this.alert}, ${this.day}`
+      `Day Weather: ${this.temp}, ${this.day}, ${this.desc}, ${this.info}, ${this.precip}] `
     );
   }
 }
@@ -40,6 +40,22 @@ class DayWeather extends Weather {
 const weather1 = new Weather(80, 0, "Sunny");
 const weather2 = new Weather(90, 10, "Cloudy");
 
-
+const dayWeather1 = new DayWeather(
+  80,
+  0,
+  "Sunny",
+  "It is sunny today",
+  "Monday"
+);
+const dayWeather2 = new DayWeather(
+  90,
+  10,
+  "Cloudy",
+  "It is cloud today",
+  "Tuesday"
+);
 
 weather1.displayInfo();
+weather2.displayInfo();
+dayWeather1.displayInfo();
+dayWeather2.displayInfo();
